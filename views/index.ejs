@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<head>
+	<title><%= title %></title>
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+	<!-- bower:js -->
+	<script src="../bower_components/jquery/dist/jquery.js"></script>
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="../bower_components/lodash/lodash.js"></script>
+	<!-- endbower -->
+
+	<!-- sockets -->
+	<script src="../socket.io/socket.io.js"></script>
+	<script>
+		var url = '<%= url %>';
+		var socket = io.connect(url);
+
+		socket.on('news', function (data) {
+			console.log(data);
+		});
+	</script>
+</body>
 </html>
