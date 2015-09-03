@@ -15,10 +15,19 @@
 	<script src="../socket.io/socket.io.js"></script>
 	<script>
 		var url = '<%= url %>';
+		var emit_data = {};
 		var socket = io.connect(url);
 
-		socket.on('news', function (data) {
-			console.log(data);
+		// Emit 'init' event
+		emit_data = {
+			init: true
+		};
+		socket.emit('init', emit_data);
+		console.log('EMIT init', emit_data);
+
+		// On 'feed' event
+		socket.on('feed', function (data) {
+			console.log('ON feed', data);
 		});
 	</script>
 </body>

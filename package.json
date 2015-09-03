@@ -17,7 +17,9 @@
     "bower": "~1.5.2",
     "lodash": "~3.10.1",
     "mongodb": "~2.0.42",
-    "mysql": "~2.9.0"
+    "mysql": "~2.9.0",
+    "feed-read": "0.0.1",
+    "async": "~1.4.2"
   },
   "devDependencies": {
     "grunt": "~0.4.5",
